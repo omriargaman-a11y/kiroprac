@@ -1,0 +1,35 @@
+{
+  "expo": {
+    "name": "Shefa",
+    "slug": "shefa-farmers-market",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "scheme": "shefa",
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#456F41"
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.shefa.farmersmarket"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#456F41"
+      },
+      "package": "com.shefa.farmersmarket"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-font"
+    ]
+  }
+}

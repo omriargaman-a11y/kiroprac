@@ -36,18 +36,23 @@ export default function MarketMapHome() {
   // Show supported always; show unsupported only when zoomed in
   const visibleMarkets = useMemo(() => {
     if (isZoomedIn) {
-      // Filter to only markets in current view for performance
+      // Filter to only markets in current view for performance,
+      // but always include Shefa-supported markets regardless of zoom
       const latMin = region.latitude - region.latitudeDelta;
       const latMax = region.latitude + region.latitudeDelta;
       const lonMin = region.longitude - region.longitudeDelta;
       const lonMax = region.longitude + region.longitudeDelta;
-      return markets.filter(
+      const inView = markets.filter(
         (m) =>
           m.latitude >= latMin &&
           m.latitude <= latMax &&
           m.longitude >= lonMin &&
           m.longitude <= lonMax
       );
+      // Merge in supported markets that may be outside the current viewport
+      const inViewIds = new Set(inView.map((m) => m.id));
+      const alwaysVisible = supportedMarkets.filter((m) => !inViewIds.has(m.id));
+      return [...inView, ...alwaysVisible];
     }
     return supportedMarkets;
   }, [isZoomedIn, region]);

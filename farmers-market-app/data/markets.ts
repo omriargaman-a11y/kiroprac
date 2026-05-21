@@ -1,6 +1,6 @@
 import { Market } from '../types';
 
-export const SUPPORTED_IDS = ['bcfm', 'mueller', 'domain'];
+export const SUPPORTED_IDS = ['bcfm', 'mueller'];
 
 // All US farmers markets from USDA directory
 // Note: The Domain market is not in USDA xlsx — added manually
@@ -12,12 +12,12 @@ export const markets: Market[] = [
     address: '11420 Century Oaks Ter, Austin, TX 78758',
     schedule: 'Saturdays 9AM–1PM',
     nextDate: '2026-05-23',
-    preOrderCutoff: 'Friday 8PM',
-    vendorCount: 18,
+    preOrderCutoff: '',
+    vendorCount: 0,
     heroImage: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&q=80',
     latitude: 30.4015,
     longitude: -97.7228,
-    supported: true,
+    supported: false,
     city: 'Austin',
     state: 'TX',
   },
